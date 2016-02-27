@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>NG MADLIBS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="MyCtrl">
+  <div id="container">
+      <div id="above">
+        <img class="happyImg" src="images/mad-lib-happy-face.png">
+        <img class="logoImg" src="images/ng-mad-libs-logo.png">
+        <p class="mad-logo-text">Automate This!</p>
+      </div>
+      <div id="lib-words">
+        <p>Provide the following words:</p>
+        <br />
+        <form>
+        <div class="col">
+          <input ng-model="male_name" type="text" name="male-name" placeholder="Male Name" required />
+          <input ng-model="job_title" type="text" name="job-title" placeholder="Job Title" required />
+          <input ng-model="tedious_task" type="text" name="tedious-task" placeholder="Tedious Task" required />
+        </div>
+        <div class="col">
+          <input ng-model="dirty_task" type="text" name="dirty-task" placeholder="Dirty Task" required />
+          <input ng-model="celebrity" type="text" name="celebrity" placeholder="Celebrity" required />
+          <input ng-model="useless_skill" type="text" name="useless-skill" placeholder="Useless Skill" required />
+        </div>
+        <div class="col">
+          <input ng-model="obnoxious_celebrity" type="text" name="obnoxious-celebrity" placeholder="Obnoxious Celebrity" required />
+          <input ng-model="huge_number" type="number" name="huge-number" placeholder="Huge Number" required />
+          <input ng-model="adjective" type="text" name="Adjective" placeholder="Adjective" required />
+        </div> 
+        </form>
+      </div>
+      <br />
+      <hr />
+      <div id="story" ng-hide="isHidden">
+        <p>{{male_name}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated  {{tedious_task}} and {{dirty_task}}. So, {{male_name}} met with his life mentor {{celebrity}} who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead. 
+ 
+        What a great decision! With his new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster. </p>
+      </div>
+      <button id="generate" ng-click="hideParagraph()">Generate Here!</button>
+  </div>
+  
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="JS/myApp.js"></script>
+</body>
+</html>
